@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+	
+	<bean id="student" class="com.capgemini.model.Student" scope="prototype">
+	<property name="rollNumber" value="1842"></property>
+	<property name="studentName" value="Divyansh"></property>
+	<property name="avgScore" value="80.2"></property>
+	<property name="homeAddress" ref="address"></property>
+	
+	</bean>
+	<bean id="student2" class="com.capgemini.model.Student" scope="prototype">
+	<!--  <constructor-arg name="rollNumber" value="100"></constructor-arg>
+	<constructor-arg name="studentName" value="Ravi"></constructor-arg>
+	<constructor-arg name="avgScore" value="85.0"></constructor-arg>-->
+	<constructor-arg index="0" value="100"></constructor-arg>
+	<constructor-arg index="1" value="Ravi"></constructor-arg>
+	<constructor-arg index="2" value="85.0"></constructor-arg>
+	
+	
+	</bean>
+	<bean id="address" class="com.capgemini.model.Address" scope="prototype">
+	 <property name="houseNumber" value="5"></property>
+	<property name="city" value="Patna"></property>
+	<property name="pin" value="800026"></property>
+	
+	</bean>
+	
+	</beans>
